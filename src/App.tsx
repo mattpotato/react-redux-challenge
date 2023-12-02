@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchProductData } from './redux/productReducer';
 import { RootState, useAppDispatch } from './redux/store';
@@ -14,8 +14,16 @@ function App() {
 
   return (
     <div>
-      hello
-      {JSON.stringify(currentProduct)}
+      <div className="flex p-4 bg-blue-950">
+        <img src="/stackline_logo.svg" alt="stackline logo" width={100}/>
+      </div>
+      <div className="flex p-4 gap-4">
+        <div>Sidebar</div>
+        <div className="w-full">
+          <div>Graph</div>
+          <div>Table</div>
+        </div>
+      </div>
     </div>
   );
 }
