@@ -1,5 +1,5 @@
 # React Redux Challenge
-View it live on https://656c1a669cf6c74d6bd9d36c--reliable-snickerdoodle-5b649c.netlify.app/
+View it live on [https://656c1a669cf6c74d6bd9d36c--reliable-snickerdoodle-5b649c.netlify.app/](https://656c202ab0fde8000896f9bf--reliable-snickerdoodle-5b649c.netlify.app/)
 ## Built with
 * TypeScript
 * React
