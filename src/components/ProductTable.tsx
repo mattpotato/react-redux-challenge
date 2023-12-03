@@ -12,23 +12,23 @@ const ProductTable = () => {
   const headers = [
     {
       id: "weekEnding",
-      label: "Week Ending",
+      label: "WEEK ENDING",
     },
     {
       id: "retailSales",
-      label: "Retail Sales",
+      label: "RETAIL SALES",
     },
     {
       id: "wholesaleSales",
-      label: "Wholesale Sales",
+      label: "WHOLESALE SALES",
     },
     {
       id: "unitsSold",
-      label: "Units Sold",
+      label: "UNITS SOLD",
     },
     {
       id: "retailerMargin",
-      label: "Retailer Margin",
+      label: "RETAILER MARGIN",
     },
   ]
 
@@ -65,7 +65,7 @@ const ProductTable = () => {
         <tr>
           {headers.map((header) => {
             return (
-              <th key={header.id} className="text-start p-4 text-md font-normal" onClick={() => handleSort(header.id)}>
+              <th key={header.id} className="text-start p-4 text-sm font-thin" onClick={() => handleSort(header.id)}>
                 <div className="flex content-center items-center center select-none cursor-pointer">
                   {header.label} 
                   {sortBy === header.id && (sortOrder === "asc" ? <FaSortUp className="ml-2"/> : <FaSortDown className="ml-2" />)}
