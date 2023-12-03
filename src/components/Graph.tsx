@@ -10,7 +10,7 @@ const Graph = () => {
   const { currentProduct } = useSelector((state: RootState) => state.product);
 
   const options: ChartOptions<"line"> = {
-    responsive: true,
+    responsive: true, // bug with chart not being responsive when resizing from smaller to bigger window https://github.com/chartjs/Chart.js/issues/11005
     plugins: {
       legend: {
         display: false
