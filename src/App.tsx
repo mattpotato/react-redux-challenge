@@ -13,7 +13,7 @@ function App() {
   }, [dispatch])
 
   return (
-    <div className="flex flex-col bg-blue-50">
+    <div className="flex flex-col bg-gray-50">
       <div className="flex p-4 bg-blue-950">
         <img src="/stackline_logo.svg" alt="stackline logo" width={100}/>
       </div>
