@@ -5,7 +5,7 @@ const SidePanel = () => {
   const { currentProduct } = useSelector((state: RootState) => state.product)
   return (
     <div className="bg-white rounded-sm shadow-sm p-4 flex flex-col items-center gap-2 min-w-[400px] max-w-[400px]">
-      <img src={currentProduct?.image} width={200} />
+      <img src={currentProduct?.image} width={200} alt="Shark Ninja"/>
       <div className="font-bold text-center text-lg">{currentProduct?.title}</div>
       <div className="text-gray-400 text-center w-64 text-sm">{currentProduct?.subtitle}</div>
       <div className="flex w-full border border-gray-50"></div>

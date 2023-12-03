@@ -1,6 +1,6 @@
 import "chart.js/auto"
 import { Line } from "react-chartjs-2";
-import { ChartData, ChartOptions, Chart } from "chart.js/auto";
+import { ChartData, ChartOptions } from "chart.js/auto";
 import "chartjs-adapter-date-fns"
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
