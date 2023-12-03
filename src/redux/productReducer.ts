@@ -13,7 +13,8 @@ interface Product {
   title: string,
   image: string,
   subtitle: string,
-  sales: Sale[]
+  sales: Sale[],
+  tags: string[],
 }
 
 interface ProductState {
