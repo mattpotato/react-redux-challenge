@@ -4,12 +4,18 @@ import { ChartData, ChartOptions, Chart } from "chart.js/auto";
 import "chartjs-adapter-date-fns"
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import colors from "tailwindcss/colors";
 
 const Graph = () => {
   const { currentProduct } = useSelector((state: RootState) => state.product);
 
   const options: ChartOptions<"line"> = {
     responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
     scales: {
       x: {
         type: "time",
@@ -23,23 +29,39 @@ const Graph = () => {
           display: true,
           text: "Month"
         },
+        grid: {
+          display: false,
+        }
 
       },
+      y: {
+        display: false,
+      }
     },
   }
 
   const chartData: ChartData<"line"> = {
     datasets: [
       {
-        label: "Data set 1",
+        label: "Retail Sales",
         data: currentProduct?.sales.map((sale) => ({ x: sale.weekEnding, y: sale.retailSales })) as any,
         tension: 1,
-      }
+        borderColor: colors.blue[400],
+        backgroundColor: colors.blue[400]
+      },
+      {
+        label: "Wholesale Sales",
+        data: currentProduct?.sales.map((sale) => ({ x: sale.weekEnding, y: sale.wholesaleSales })) as any,
+        tension: 1,
+        borderColor: colors.gray[400],
+        backgroundColor: colors.gray[400]
+      },
     ]
   }
   
   return (
-    <div className="bg-white shadow mr-4">
+    <div className="bg-white shadow p-4 mr-4">
+      <div className="text-lg">Retail Sales</div>
       <Line options={options} data={chartData}/>
     </div>
   )

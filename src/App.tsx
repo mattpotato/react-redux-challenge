@@ -13,13 +13,13 @@ function App() {
   }, [dispatch])
 
   return (
-    <div className="flex flex-col h-screen bg-blue-50">
+    <div className="flex flex-col bg-blue-50">
       <div className="flex p-4 bg-blue-950">
         <img src="/stackline_logo.svg" alt="stackline logo" width={100}/>
       </div>
-      <div className="flex h-[calc(100vh-74px)] px-4 pt-16 gap-4">
+      <div className="flex px-4 pt-16 gap-4">
         <SidePanel />
-        <div className="flex flex-col gap-4 w-full overflow-y-scroll overflow-x-hidden">
+        <div className="flex flex-col gap-4 w-full">
           <Graph />
           <div className="mr-4">
             <ProductTable />

@@ -4,11 +4,13 @@ import { RootState } from "../redux/store";
 const SidePanel = () => {
   const { currentProduct } = useSelector((state: RootState) => state.product)
   return (
-    <div className="bg-white rounded-sm shadow-sm p-4 flex flex-col items-center">
-      <img src={currentProduct?.image} width={300} />
-      <div className="font-bold text-center">{currentProduct?.title}</div>
-      <div className="text-gray-500 text-center">{currentProduct?.subtitle}</div>
-      <div className="flex gap-4 flex-wrap pt-4 m-2 border-t border-b border-gray-50">{currentProduct?.tags.map((tag) => <div key={tag} className="border p-2 rounded-sm">{tag}</div>)}</div>
+    <div className="bg-white rounded-sm shadow-sm p-4 flex flex-col items-center gap-2 min-w-[400px] max-w-[400px]">
+      <img src={currentProduct?.image} width={200} />
+      <div className="font-bold text-center text-lg">{currentProduct?.title}</div>
+      <div className="text-gray-400 text-center w-64 text-sm">{currentProduct?.subtitle}</div>
+      <div className="flex w-full border border-gray-50"></div>
+      <div className="flex gap-4 flex-wrap p-2 m-2">{currentProduct?.tags.map((tag) => <div key={tag} className="border py-1 px-6 rounded-sm text-sm">{tag}</div>)}</div>
+      <div className="flex w-full border border-gray-50"></div>
     </div>
   )
 }
