@@ -1,13 +1,11 @@
-import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchProductData } from './redux/productReducer';
-import { RootState, useAppDispatch } from './redux/store';
+import { useAppDispatch } from './redux/store';
 import SidePanel from './components/SidePanel';
+import ProductTable from './components/ProductTable';
 
 function App() {
-
   const dispatch = useAppDispatch();
-  const { currentProduct } = useSelector((state: RootState) => state.product);
 
   useEffect(() => {
     dispatch(fetchProductData());
@@ -18,11 +16,11 @@ function App() {
       <div className="flex p-4 bg-blue-950">
         <img src="/stackline_logo.svg" alt="stackline logo" width={100}/>
       </div>
-      <div className="flex h-full p-4 gap-4 bg-blue-50">
+      <div className="flex h-[calc(100vh-74px)] p-4 gap-4 bg-blue-50">
         <SidePanel />
-        <div className="w-full">
+        <div className="w-full overflow-scroll">
           <div>Graph</div>
-          <div>Table</div>
+          <ProductTable />
         </div>
       </div>
     </div>
