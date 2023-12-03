@@ -59,9 +59,6 @@ const ProductTable = () => {
     }
   })
 
-  console.log({ sortedData })
-
-
   return (
     <table className="bg-white w-full shadow">
       <thead className="p-4">
